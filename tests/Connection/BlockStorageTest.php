@@ -25,7 +25,6 @@ use Fusio\Adapter\OpenStack\Connection\BlockStorage;
 use Fusio\Engine\Form\Builder;
 use Fusio\Engine\Form\Container;
 use Fusio\Engine\Form\Element\Input;
-use Fusio\Engine\Test\EngineTestCaseTrait;
 use OpenStack\BlockStorage\v2\Service;
 
 /**
@@ -37,8 +36,6 @@ use OpenStack\BlockStorage\v2\Service;
  */
 class BlockStorageTest extends ApiTestCase
 {
-    use EngineTestCaseTrait;
-
     public function testGetConnection()
     {
         $connection = $this->getConnection(BlockStorage::class);

@@ -25,7 +25,6 @@ use Fusio\Adapter\OpenStack\Connection\Compute;
 use Fusio\Engine\Form\Builder;
 use Fusio\Engine\Form\Container;
 use Fusio\Engine\Form\Element\Input;
-use Fusio\Engine\Test\EngineTestCaseTrait;
 use OpenStack\Compute\v2\Service;
 
 /**
@@ -37,8 +36,6 @@ use OpenStack\Compute\v2\Service;
  */
 class ComputeTest extends ApiTestCase
 {
-    use EngineTestCaseTrait;
-
     public function testGetConnection()
     {
         $connection = $this->getConnection(Compute::class);

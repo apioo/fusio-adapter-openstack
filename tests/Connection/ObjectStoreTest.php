@@ -25,7 +25,6 @@ use Fusio\Adapter\OpenStack\Connection\ObjectStore;
 use Fusio\Engine\Form\Builder;
 use Fusio\Engine\Form\Container;
 use Fusio\Engine\Form\Element\Input;
-use Fusio\Engine\Test\EngineTestCaseTrait;
 use OpenStack\ObjectStore\v1\Service;
 
 /**
@@ -37,8 +36,6 @@ use OpenStack\ObjectStore\v1\Service;
  */
 class ObjectStoreTest extends ApiTestCase
 {
-    use EngineTestCaseTrait;
-
     public function testGetConnection()
     {
         $connection = $this->getConnection(ObjectStore::class);

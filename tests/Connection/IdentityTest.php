@@ -25,7 +25,6 @@ use Fusio\Adapter\OpenStack\Connection\Identity;
 use Fusio\Engine\Form\Builder;
 use Fusio\Engine\Form\Container;
 use Fusio\Engine\Form\Element\Input;
-use Fusio\Engine\Test\EngineTestCaseTrait;
 use OpenStack\Identity\v3\Service;
 
 /**
@@ -37,8 +36,6 @@ use OpenStack\Identity\v3\Service;
  */
 class IdentityTest extends ApiTestCase
 {
-    use EngineTestCaseTrait;
-
     public function testGetConnection()
     {
         $connection = $this->getConnection(Identity::class);

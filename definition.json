@@ -1,0 +1,10 @@
+{
+  "connectionClass": [
+    "Fusio\\Adapter\\OpenStack\\Connection\\BlockStorage",
+    "Fusio\\Adapter\\OpenStack\\Connection\\Compute",
+    "Fusio\\Adapter\\OpenStack\\Connection\\Identity",
+    "Fusio\\Adapter\\OpenStack\\Connection\\Images",
+    "Fusio\\Adapter\\OpenStack\\Connection\\Networking",
+    "Fusio\\Adapter\\OpenStack\\Connection\\ObjectStore"
+  ]
+}

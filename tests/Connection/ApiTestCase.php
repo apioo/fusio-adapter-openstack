@@ -25,6 +25,7 @@ use Fusio\Adapter\OpenStack\Connection\ConnectionAbstract;
 use Fusio\Engine\Parameters;
 use Fusio\Engine\Test\EngineTestCaseTrait;
 use GuzzleHttp\Client;
+use PHPUnit\Framework\TestCase;
 
 /**
  * ApiTestCase
@@ -33,7 +34,7 @@ use GuzzleHttp\Client;
  * @license http://www.gnu.org/licenses/agpl-3.0
  * @link    http://fusio-project.org
  */
-abstract class ApiTestCase extends \PHPUnit_Framework_TestCase
+abstract class ApiTestCase extends TestCase
 {
     use EngineTestCaseTrait;
 

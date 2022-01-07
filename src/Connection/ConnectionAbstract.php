@@ -3,7 +3,7 @@
  * Fusio
  * A web-application to create dynamically RESTful APIs
  *
- * Copyright (C) 2015-2018 Christoph Kappestein <christoph.kappestein@gmail.com>
+ * Copyright (C) 2015-2022 Christoph Kappestein <christoph.kappestein@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -33,16 +33,13 @@ use OpenStack\OpenStack;
  *
  * @author  Christoph Kappestein <christoph.kappestein@gmail.com>
  * @license http://www.gnu.org/licenses/agpl-3.0
- * @link    http://fusio-project.org
+ * @link    https://www.fusio-project.org/
  */
 abstract class ConnectionAbstract implements ConnectionInterface
 {
-    /**
-     * @var \GuzzleHttp\ClientInterface
-     */
-    protected $httpClient;
+    protected ?ClientInterface $httpClient = null;
 
-    public function configure(BuilderInterface $builder, ElementFactoryInterface $elementFactory)
+    public function configure(BuilderInterface $builder, ElementFactoryInterface $elementFactory): void
     {
         $builder->add($elementFactory->newInput('auth_url', 'Auth Url', ''));
         $builder->add($elementFactory->newInput('region', 'Region', ''));
@@ -51,19 +48,12 @@ abstract class ConnectionAbstract implements ConnectionInterface
         $builder->add($elementFactory->newInput('project_id', 'Project Id', ''));
     }
 
-    /**
-     * @param \GuzzleHttp\ClientInterface $httpClient
-     */
-    public function setHttpClient(ClientInterface $httpClient)
+    public function setHttpClient(ClientInterface $httpClient): void
     {
         $this->httpClient = $httpClient;
     }
 
-    /**
-     * @param \Fusio\Engine\ParametersInterface $config
-     * @return \OpenStack\OpenStack
-     */
-    protected function getOpenStack(ParametersInterface $config)
+    protected function getOpenStack(ParametersInterface $config): OpenStack
     {
         $options = [
             'authUrl' => $config->get('auth_url'),

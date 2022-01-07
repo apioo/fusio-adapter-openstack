@@ -3,7 +3,7 @@
  * Fusio
  * A web-application to create dynamically RESTful APIs
  *
- * Copyright (C) 2015-2018 Christoph Kappestein <christoph.kappestein@gmail.com>
+ * Copyright (C) 2015-2022 Christoph Kappestein <christoph.kappestein@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -22,26 +22,23 @@
 namespace Fusio\Adapter\OpenStack\Connection;
 
 use Fusio\Engine\ParametersInterface;
+use OpenStack\ObjectStore\v1\Service;
 
 /**
  * ObjectStore
  *
  * @author  Christoph Kappestein <christoph.kappestein@gmail.com>
  * @license http://www.gnu.org/licenses/agpl-3.0
- * @link    http://fusio-project.org
+ * @link    https://www.fusio-project.org/
  */
 class ObjectStore extends ConnectionAbstract
 {
-    public function getName()
+    public function getName(): string
     {
         return 'OpenStack-ObjectStore';
     }
 
-    /**
-     * @param \Fusio\Engine\ParametersInterface $config
-     * @return \OpenStack\ObjectStore\v1\Service
-     */
-    public function getConnection(ParametersInterface $config)
+    public function getConnection(ParametersInterface $config): Service
     {
         return $this->getOpenStack($config)->objectStoreV1();
     }

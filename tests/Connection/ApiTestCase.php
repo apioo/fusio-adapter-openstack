@@ -21,11 +21,10 @@
 
 namespace Fusio\Adapter\OpenStack\Tests\Connection;
 
+use Fusio\Adapter\Neo4j\Tests\OpenStackTestCase;
 use Fusio\Adapter\OpenStack\Connection\ConnectionAbstract;
 use Fusio\Engine\Parameters;
-use Fusio\Engine\Test\EngineTestCaseTrait;
 use GuzzleHttp\Client;
-use PHPUnit\Framework\TestCase;
 
 /**
  * ApiTestCase
@@ -34,10 +33,8 @@ use PHPUnit\Framework\TestCase;
  * @license http://www.gnu.org/licenses/agpl-3.0
  * @link    https://www.fusio-project.org/
  */
-abstract class ApiTestCase extends TestCase
+abstract class ApiTestCase extends OpenStackTestCase
 {
-    use EngineTestCaseTrait;
-
     protected function getConnection($class)
     {
         /** @var ConnectionAbstract $connectionFactory */

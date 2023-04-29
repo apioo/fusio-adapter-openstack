@@ -6,6 +6,6 @@ services. You can install the adapter with the following steps inside your Fusio
 project:
 
     composer require fusio/adapter-openstack
-    php bin/fusio system:register Fusio\Adapter\OpenStack\Adapter
+    php bin/fusio system:register "Fusio\Adapter\OpenStack\Adapter"
 
-[Fusio]: http://fusio-project.org/
+[Fusio]: https://www.fusio-project.org/

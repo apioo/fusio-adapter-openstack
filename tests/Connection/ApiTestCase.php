@@ -21,8 +21,8 @@
 
 namespace Fusio\Adapter\OpenStack\Tests\Connection;
 
-use Fusio\Adapter\Neo4j\Tests\OpenStackTestCase;
 use Fusio\Adapter\OpenStack\Connection\ConnectionAbstract;
+use Fusio\Adapter\OpenStack\Tests\OpenStackTestCase;
 use Fusio\Engine\Parameters;
 use GuzzleHttp\Client;
 

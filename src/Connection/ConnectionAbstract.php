@@ -21,7 +21,6 @@
 
 namespace Fusio\Adapter\OpenStack\Connection;
 
-use Fusio\Engine\ConnectionInterface;
 use Fusio\Engine\Form\BuilderInterface;
 use Fusio\Engine\Form\ElementFactoryInterface;
 use Fusio\Engine\ParametersInterface;
@@ -35,7 +34,7 @@ use OpenStack\OpenStack;
  * @license http://www.gnu.org/licenses/agpl-3.0
  * @link    https://www.fusio-project.org/
  */
-abstract class ConnectionAbstract implements ConnectionInterface
+abstract class ConnectionAbstract extends \Fusio\Engine\ConnectionAbstract
 {
     protected ?ClientInterface $httpClient = null;
 

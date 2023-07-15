@@ -31,7 +31,7 @@ use OpenStack\ObjectStore\v1\Service;
  * ObjectStoreTest
  *
  * @author  Christoph Kappestein <christoph.kappestein@gmail.com>
- * @license http://www.gnu.org/licenses/agpl-3.0
+ * @license http://www.apache.org/licenses/LICENSE-2.0
  * @link    https://www.fusio-project.org/
  */
 class ObjectStoreTest extends ApiTestCase

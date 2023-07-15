@@ -21,16 +21,9 @@
 
 namespace Fusio\Adapter\OpenStack\Tests;
 
-use Fusio\Adapter\OpenStack\Connection\BlockStorage;
-use Fusio\Adapter\OpenStack\Connection\Compute;
-use Fusio\Adapter\OpenStack\Connection\Identity;
-use Fusio\Adapter\OpenStack\Connection\Images;
-use Fusio\Adapter\OpenStack\Connection\Networking;
-use Fusio\Adapter\OpenStack\Connection\ObjectStore;
-use Fusio\Engine\Action\Runtime;
+use Fusio\Adapter\OpenStack\Adapter;
 use Fusio\Engine\Test\EngineTestCaseTrait;
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\DependencyInjection\Container;
 
 /**
  * OpenStackTestCase
@@ -43,13 +36,8 @@ abstract class OpenStackTestCase extends TestCase
 {
     use EngineTestCaseTrait;
 
-    protected function configure(Runtime $runtime, Container $container): void
+    protected function getAdapterClass(): string
     {
-        $container->set(BlockStorage::class, new BlockStorage());
-        $container->set(Compute::class, new Compute());
-        $container->set(Identity::class, new Identity());
-        $container->set(Images::class, new Images());
-        $container->set(Networking::class, new Networking());
-        $container->set(ObjectStore::class, new ObjectStore());
+        return Adapter::class;
     }
 }

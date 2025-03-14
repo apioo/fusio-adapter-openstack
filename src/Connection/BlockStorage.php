@@ -40,6 +40,6 @@ class BlockStorage extends ConnectionAbstract
 
     public function getConnection(ParametersInterface $config): Service
     {
-        return $this->getOpenStack($config)->blockStorageV2();
+        return $this->getOpenStack($config)->blockStorageV3();
     }
 }
